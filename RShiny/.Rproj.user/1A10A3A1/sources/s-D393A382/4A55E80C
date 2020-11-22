@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1605889180130.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2091717544",
+    "id" : "4A55E80C",
+    "lastKnownWriteTime" : 1605892211,
+    "last_content_update" : 1605892211,
+    "path" : "~/js1/RShiny/BestMatch.csv",
+    "project_path" : "BestMatch.csv",
+    "properties" : {
+        "cursorPosition" : "0,0",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "text"
+}
