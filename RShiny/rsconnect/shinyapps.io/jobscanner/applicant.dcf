@@ -1,0 +1,12 @@
+name: Applicant
+title: Applicant
+username:
+account: jobscanner
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3274817
+bundleId: 3889868
+url: https://jobscanner.shinyapps.io/Applicant/
+when: 1606019678.11516
+asMultiple: FALSE
+asStatic: FALSE

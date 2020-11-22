@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1605889112833.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "25705248",
+    "id" : "88607FF3",
+    "lastKnownWriteTime" : 1605889308,
+    "last_content_update" : 1605889308,
+    "path" : "~/js1/RShiny/helper.py",
+    "project_path" : "helper.py",
+    "properties" : {
+        "cursorPosition" : "0,0",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "python"
+}
