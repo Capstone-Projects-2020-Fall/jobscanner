@@ -1,3 +1,4 @@
+
 # Job Scanner ---an app for job seekers
 
 # Web app concepts:
@@ -10,6 +11,7 @@ Better that our original idea, Job scanner can be one-of-a-kind job matching web
 As for the employee panel, Job scanner will match the job description in pdf or doc form and match all the candidate in data files, also based on the similarity of the resume, it could lower the cost for HR to screen unmatched candidates.
 
 For the rest of the panel, Job scanner will locate the user’s resume and analysis the weakness in it , including giving suggestion of missing keywords suggestion based on the job description of certain industry that user would like to work in. 
+
 # Test major procedure and result
 (for pre-lease only)
 First install Ananconda, then:
@@ -54,4 +56,25 @@ Go back to anaconda, see the pic below, search "selenium" (also “numpy” and 
 This is the feedback from our test group, currently we are working on solving the problem for good.
 ![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/pic12.png)
 ![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/pic13.png)
+
+# Feature tested:
+
+(Only for baby version pre-lease)
+
+Front-end(written in R):
+
+1. User can upload their resume successfully once the front-end pages pop up.
+2. User can get preminary match scores by finding the similarity between their resume and job description
+2. User can alternate the numbers of job lists they want to show in the main screen(e.g. Someone will only want to show 10 matched job opening, then it will only show 10 by choosing the scroll down list "10" on the left hand side.
+3. User can update the job lists by searching with specific keywords appears in the job lists by type in the word in "seaching" on the rupper right.
+
+
+Back-end(written in Python)
+
+1. User can use selenium to web scrapping Glassdoor.com to get the job lists that they want to do the match later.
+2. User can alternate the job lists they want to scrap by changing the job name parameter and job number paramenter in the data collection back-end code.
+3. User can bypass the Glassdoor popout window and scrap the information without interrupting till finally the expected numbers of job lists finished collecting.
+
+# Test Manual:
+Please see the test manual in communication email/test manual in shared test drive folder/master repo
 
