@@ -14,6 +14,8 @@ For the rest of the panel, Job scanner will locate the user’s resume and analy
 
 # Test major procedure and result
 (for pre-lease only)
+Video record of test demo: https://youtu.be/Dr1AF8cRAeQ
+
 First install Ananconda, then:
 ### 1. download the release and replace it with the Chromed Driver in the pre-release .zip files, every single one of it.
 Website: https://sites.google.com/a/chromium.org/chromedriver/ 
