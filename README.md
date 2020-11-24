@@ -21,6 +21,8 @@ For the rest of the panel, Job scanner will locate the user’s resume and analy
 
 # Feature tested:
 
+(Only for baby version pre-lease)
+
 Front-end(written in R):
 
 1. User can upload their resume successfully once the front-end pages pop up.
@@ -34,3 +36,6 @@ Back-end(written in Python)
 1. User can use selenium to web scrapping Glassdoor.com to get the job lists that they want to do the match later.
 2. User can alternate the job lists they want to scrap by changing the job name parameter and job number paramenter in the data collection back-end code.
 3. User can bypass the Glassdoor popout window and scrap the information without interrupting till finally the expected numbers of job lists finished collecting.
+
+# Test Manual:
+Please see the test manual in communication email/test manual in shared test drive folder/master repo
