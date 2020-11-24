@@ -15,3 +15,9 @@ Better that our original idea, Job scanner can be one-of-a-kind job matching web
 As for the employee panel, Job scanner will match the job description in pdf or doc form and match all the candidate in data files, also based on the similarity of the resume, it could lower the cost for HR to screen unmatched candidates.
 
 For the rest of the panel, Job scanner will locate the user’s resume and analysis the weakness in it , including giving suggestion of missing keywords suggestion based on the job description of certain industry that user would like to work in. 
+
+# known Bugs
+(pre-lease version)
+
+1. The application have dependency issue that currently works fine at local but cannot publish to the instances.
+2. Back-end matching code works fine with local dataset that scrapped from Glassdoor.com, but have crashing/glitch issue from time to time when using the same updated dataset from Amazon RDS.
