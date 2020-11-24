@@ -18,21 +18,30 @@ For the rest of the panel, Job scanner will locate the user’s resume and analy
 # Test major procedure and result
 (for pre-lease only)
 First install Ananconda, then:
-1. download the release and replace it with the Chromed Driver in the pre-release .zip files, every single one of it,
+### 1. download the release and replace it with the Chromed Driver in the pre-release .zip files, every single one of it.
 Website: https://sites.google.com/a/chromium.org/chromedriver/ 
 Choose one selenium webdriver that fit your system, this step is important because you will need it to scrape the data from Glassdoor:
+
 ![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/Picture1.png)
-2.In Anaconda, please set the environment first to bring all the drivers working:
+
+### 2.In Anaconda, please set the environment first to bring all the drivers working:
+
 ![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/Picture2.png)
-3.choose R (r) and python (3.0+, must be python 3) version, give the new enviroment a name and hit create.
+
+### 3.choose R (r) and python (3.0+, must be python 3) version, give the new enviroment a name and hit create.
 When it is done, open the Home on the left:
+
 ![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/Picture3.png)
-4.Then install the Rstudio, Jupyter notebook and Spyder under the environment you create just then (in this case mine is "demo")
+
+### 4.Then install the Rstudio, Jupyter notebook and Spyder under the environment you create just then (in this case mine is "demo")
 Before we begin scrapping, we need to add python dependents into the environment like this:
 Go back to anaconda, see the pic below, search "selenium" (also “numpy” and “pandas” and install it, then reopen the spyder and refresh)
+
 ![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/Picture4.png)
 ![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/Picture5.png)
-5.Test result screenshots (front-end that shows the final product)
+
+### 5.Test result screenshots (front-end that shows the final product)
+
 ![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/Picture6.png)
 ![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/Picture7.png)
 ![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/Picture8.png)
