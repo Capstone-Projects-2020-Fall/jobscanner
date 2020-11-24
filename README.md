@@ -27,3 +27,10 @@ Front-end(written in R):
 2. User can get preminary match scores by finding the similarity between their resume and job description
 2. User can alternate the numbers of job lists they want to show in the main screen(e.g. Someone will only want to show 10 matched job opening, then it will only show 10 by choosing the scroll down list "10" on the left hand side.
 3. User can update the job lists by searching with specific keywords appears in the job lists by type in the word in "seaching" on the rupper right.
+
+
+Back-end(written in Python)
+
+1. User can use selenium to web scrapping Glassdoor.com to get the job lists that they want to do the match later.
+2. User can alternate the job lists they want to scrap by changing the job name parameter and job number paramenter in the data collection back-end code.
+3. User can bypass the Glassdoor popout window and scrap the information without interrupting till finally the expected numbers of job lists finished collecting.
