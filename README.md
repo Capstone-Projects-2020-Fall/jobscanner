@@ -23,8 +23,8 @@ For the rest of the panel, Job scanner will locate the user’s resume and analy
 2. Back-end matching code works fine with local dataset that scrapped from Glassdoor.com, but have crashing/glitch issue from time to time when using the same updated dataset from Amazon RDS.
 
 # Test Bugs and Issues
-1. Front- end may not compatible with different computer due to the environment settings, even though all the dependencies are installed correctly by the 14 pages test instruction document in master repository. This is the feedback from our test group, currently we are working on solving the problem for good.
+# Front- end may not compatible with different computer due to the environment settings, even though all the dependencies are installed correctlyby the 14 pages test instruction document in master repository. 
+This is the feedback from our test group, currently we are working on solving the problem for good.
 ![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/pic12.png)
-
 ![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/pic13.png)
 
