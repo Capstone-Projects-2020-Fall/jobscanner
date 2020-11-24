@@ -16,17 +16,17 @@ As for the employee panel, Job scanner will match the job description in pdf or 
 
 For the rest of the panel, Job scanner will locate the user’s resume and analysis the weakness in it , including giving suggestion of missing keywords suggestion based on the job description of certain industry that user would like to work in. 
 # Test major procedure and result
-![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/picture1.png)
-![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/picture2.png)
-![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/picture3.png)
-![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/picture4.png)
-![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/picture5.png)
-![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/picture6.png)
-![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/picture7.png)
-![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/picture8.png)
-![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/picture9.png)
-![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/picture10.png)
-![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/picture11.png)
+![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/Picture1.png)
+![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/Picture2.png)
+![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/Picture3.png)
+![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/Picture4.png)
+![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/Picture5.png)
+![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/Picture6.png)
+![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/Picture7.png)
+![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/Picture8.png)
+![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/Picture9.png)
+![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/Picture10.png)
+![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/Picture11.png)
 # known Bugs
 (pre-lease version)
 
