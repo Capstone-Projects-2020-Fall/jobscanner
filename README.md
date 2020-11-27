@@ -12,6 +12,15 @@ As for the employee panel, Job scanner will match the job description in pdf or 
 
 For the rest of the panel, Job scanner will locate the user’s resume and analysis the weakness in it , including giving suggestion of missing keywords suggestion based on the job description of certain industry that user would like to work in. 
 
+#### Front-end style and element design: Kevin
+#### Test conduct: Ruchit
+#### Data purify and processing : Chris
+#### Login page + employer panel back-end: Zihan
+#### Data prediction + application panel back-end: Chi
+#### Table insertion and visualization: Ziwei
+#### Application model deployment and linking panel code: Kyle
+
+
 # Test major procedure and result
 (for pre-lease only)
 Video record of test demo: https://youtu.be/Dr1AF8cRAeQ
