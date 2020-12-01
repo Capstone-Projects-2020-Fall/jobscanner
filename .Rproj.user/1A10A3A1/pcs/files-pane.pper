@@ -1,0 +1,9 @@
+{
+    "path" : "~/Desktop/jobscanner",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}
