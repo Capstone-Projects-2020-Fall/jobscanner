@@ -40,6 +40,9 @@ corr_p = data %>%
   filter(senior.mangemnet.stars %in% c(0,0.5,1.0,1.5,2.0,2.5,3.0,3.5,4.0,4.5,5.0)) %>% 
   select(one_of(choice))
 
+# eliminate extra white spaces
+corpus_google_summary =
+  tm_map(corpus_google_summary, stripWhitespace)
 colnames(corr_p) <- c('overall','work.balance','culture.values',
                       'carrer.oppo','comp.benefit','senior.mange')
 
@@ -119,3 +122,19 @@ getTermMatrix_advice = memoise(function(comp){
   m_advice = as.matrix(tdm_advice)
   sort(rowSums(m_advice), decreasing = TRUE)
 })
+
+
+summary = data %>% select(company,summary) %>% filter(company == comp)
+corpus_sum = Corpus(VectorSource(summary$summary))
+corpus_sum = tm_map(corpus_sum, content_transformer(tolower))
+corpus_sum = tm_map(corpus_sum, removeNumbers)
+corpus_sum = tm_map(corpus_sum, removeWords ,stopwords('english'))
+corpus_sum = tm_map(corpus_sum, removePunctuation)
+corpus_sum = tm_map(corpus_sum, stripWhitespace)
+corpus_sum = tm_map(corpus_sum, removeWords,c("get","told","gave","took","can", "could"))
+tdm_sum= TermDocumentMatrix(corpus_sum,control = list(minWordLength = 1))
+tdm_sum = removeSparseTerms(tdm_sum, 0.9)
+m_sum= as.matrix(tdm_sum)
+sort(rowSums(m_sum), decreasing = TRUE)
+})
+

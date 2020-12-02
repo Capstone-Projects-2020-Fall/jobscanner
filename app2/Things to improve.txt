@@ -1,9 +1,9 @@
 
 -Do an analysis on group_by(current, former, position)
 
--Present more into data analysis.
+-Create new database
 
--Anonymous check box fix
+-Present new data
 
 -wordcloud c, multi plot
 
