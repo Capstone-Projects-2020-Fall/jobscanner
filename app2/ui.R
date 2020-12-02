@@ -31,6 +31,42 @@ shinyUI(dashboardPage(skin = "blue",
       
     )
   ),
+hundredSlider(
+  width = 350,
+  sidebarMenu(
+fluidRow(
+ # box(plotlyOutput("hist")),
+  box(plotOutput('corr')),
+  box(plotlyOutput('current_former')),
+  box(
+    title = "Inputs", status = 'warning', solidHeader = TRUE,
+    checkboxGroupInput(inputId = "checkCompany",
+         Ï             h3("company:"),
+                       choices = list('google'='google',
+                                      'amazon'= 'amazon',
+                                      'facebook' = 'facebook',
+                                      'netflix' = 'netflix',
+                                      'apple' = 'apple',
+                                      'microsoft' = 'microsoft'),
+                       selected = c('google', 'amazon')),
+    
+    checkboxInput(inputId = "checkAnonymous",
+                  'Anonymous Response',
+                  value = FALSE)
+  )
+)
+    
+    hr(),
+    
+    
+    
+    sidebarMenu(
+      menuItem("Job Scanner Team: this dataset are from glassdoor scraping data,same source as our applicant panel data.")
+    )
+    
+    
+  )
+),
   
   dashboardBody(
     tabItems(
