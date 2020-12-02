@@ -84,6 +84,25 @@ shinyServer(
         })
       })
     })
+    wc_data_con = reactive({
+      input$update
+      isolate({
+        withProgress({
+          setProgress(message = "Processing corpus...")
+          getTermMatrix_con(input$c_select)
+        })
+      })
+    })
+
+    wc_data_advice = reactive({
+      input$update
+      isolate({
+        withProgress({
+          setProgress(message = "Processing corpus...")
+          getTermMatrix_advice(input$c_select)
+        })
+      })
+    })
 
 summary = data %>% select(company,summary) %>% filter(company == comp)
 corpus_sum = Corpus(VectorSource(summary$summary))
