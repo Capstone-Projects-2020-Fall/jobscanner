@@ -45,6 +45,25 @@ getBroken_Matrix = memoise(function(comp){
 })
 
 
+shinyServer(
+  
+  function(input,output, session){
+    
+    r_time_rating <- reactive(
+      data %>%
+        mutate(work.balance.stars = as.numeric(work.balance.stars),
+               culture.values.stars = as.numeric(culture.values.stars),
+               carrer.opportunities.stars = as.numeric(carrer.opportunities.stars),
+               comp.benefit.stars = as.numeric(comp.benefit.stars),
+               senior.mangemnet.stars = as.numeric(senior.mangemnet.stars)) %>%
+        filter(work.balance.stars %in% c(0,0.5,1.0,1.5,2.0,2.5,3.0,3.5,4.0,4.5,5.0)) %>%
+        filter(culture.values.stars %in% c(0,0.5,1.0,1.5,2.0,2.5,3.0,3.5,4.0,4.5,5.0)) %>%
+        filter(carrer.opportunities.stars %in% c(0,0.5,1.0,1.5,2.0,2.5,3.0,3.5,4.0,4.5,5.0)) %>%
+        filter(comp.benefit.stars %in% c(0,0.5,1.0,1.5,2.0,2.5,3.0,3.5,4.0,4.5,5.0)) %>%
+        filter(senior.mangemnet.stars %in% c(0,0.5,1.0,1.5,2.0,2.5,3.0,3.5,4.0,4.5,5.0))
+    )
+
+
 summary = data %>% select(company,summary) %>% filter(company == comp)
 corpus_sum = Corpus(VectorSource(summary$summary))
 corpus_sum = tm_map(corpus_sum, content_transformer(tolower))
