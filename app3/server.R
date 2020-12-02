@@ -50,4 +50,49 @@ shinyServer(function(input, output) {
     predict(MethodSelection(),DataEntryCase())
   })
   
-  
+    output$Plots<- renderPlot({
+    
+    SalaryEstimation<-PredictSalaryLM()[1]
+    
+    #generating plots
+    g<-ggplot(Salaries)
+    plotRank<-g+geom_point(aes(x=salary,y=rank),alpha=0.5)+
+              geom_point(aes(x=SalaryEstimation[1],y=input$Rank),fill="red",shape=23,size=5)+
+              geom_hline(yintercept = ifelse(input$Rank=="Prof",3,ifelse(input$Rank=="AsstProf",2,1)),color="red")+
+              geom_vline(xintercept=SalaryEstimation[1],color="red")+
+              theme(axis.text.y = element_text(angle = 90, hjust = 1))+
+              ggtitle("Salary v.s. Rank")+
+              theme(plot.title = element_text(hjust = 0.5,lineheight=.8, face="bold"))
+    
+    plotDiscipline<-g+geom_point(aes(x=salary,y=discipline),alpha=0.5)+
+              geom_point(aes(x=SalaryEstimation[1],y=input$Discipline),fill="red",shape=23,size=5)+
+              geom_hline(yintercept = ifelse(input$Rank=="B",1,2),color="red")+
+              geom_vline(xintercept=SalaryEstimation[1],color="red")+
+              theme(axis.text.y = element_text(angle = 90, hjust = 1))+
+              ggtitle("Salary v.s. Discipline")+
+              theme(plot.title = element_text(hjust = 0.5,lineheight=.8, face="bold"))
+    
+    plotSincePhd<-g+geom_point(aes(x=salary,y=yrs.since.phd),alpha=0.5)+
+              geom_point(aes(x=SalaryEstimation[1],y=input$yrs.since.phd),fill="red",shape=23,size=5)+
+              geom_hline(yintercept = input$yrs.since.phd,color="red")+
+              geom_vline(xintercept=SalaryEstimation[1],color="red")+
+              ggtitle("Salary v.s. Years Since PhD")+
+              theme(plot.title = element_text(hjust = 0.5,lineheight=.8, face="bold"))
+      
+    plotSinceService<-g+geom_point(aes(x=salary,y=yrs.service),alpha=0.5)+
+              geom_point(aes(x=SalaryEstimation[1],y=input$yrs.service),fill="red",shape=23,size=5)+
+              geom_hline(yintercept = input$yrs.service,color="red")+
+              geom_vline(xintercept=SalaryEstimation[1],color="red")+
+              ggtitle("Salary v.s. Years Since Service")+
+              theme(plot.title = element_text(hjust = 0.5,lineheight=.8, face="bold"))
+    
+    plotSex<-g+geom_point(aes(x=salary,y=sex),alpha=0.5)+
+              geom_point(aes(x=SalaryEstimation[1],y=input$sex),fill="red",shape=23,size=5)+
+              geom_hline(yintercept = ifelse(input$sex=="Female",1,2),color="red")+
+              geom_vline(xintercept=SalaryEstimation[1],color="red")+
+              theme(axis.text.y = element_text(angle = 90, hjust = 1))+
+              ggtitle("Salary v.s. Gender")+
+              theme(plot.title = element_text(hjust = 0.5,lineheight=.8, face="bold"))
+    
+    grid.arrange(plotRank,plotDiscipline,plotSincePhd,plotSinceService,plotSex,nrow=1,ncol=5)
+  })
