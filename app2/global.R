@@ -62,7 +62,28 @@ shinyServer(
         filter(comp.benefit.stars %in% c(0,0.5,1.0,1.5,2.0,2.5,3.0,3.5,4.0,4.5,5.0)) %>%
         filter(senior.mangemnet.stars %in% c(0,0.5,1.0,1.5,2.0,2.5,3.0,3.5,4.0,4.5,5.0))
     )
-
+    wc_data_sum = reactive({
+      input$update
+      isolate({
+        withProgress({
+          setProgress(message = "Processing corpus....
+                      ")
+          getTermMatrix_sum(input$c_select)
+        })
+      })
+    })
+    
+    wc_data_pro = reactive({
+      input$update
+      
+      isolate({
+        withProgress({
+          setProgress(message = "Processing corpus....
+                      ")
+          getTermMatrix_pro(input$c_select)
+        })
+      })
+    })
 
 summary = data %>% select(company,summary) %>% filter(company == comp)
 corpus_sum = Corpus(VectorSource(summary$summary))
