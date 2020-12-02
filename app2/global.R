@@ -27,19 +27,37 @@ choice = c('overall.ratings',
 companies = c('google','amazon','facebook','netflix','apple','microsoft')
 # data set for corr plot
 
-corr_p = data %>%
-  mutate(work.balance.stars = as.numeric(work.balance.stars),
-         culture.values.stars = as.numeric(culture.values.stars),
-         carrer.opportunities.stars = as.numeric(carrer.opportunities.stars),
-         comp.benefit.stars = as.numeric(comp.benefit.stars),
-         senior.mangemnet.stars = as.numeric(senior.mangemnet.stars)) %>%
-  filter(work.balance.stars %in% c(0,0.5,1.0,1.5,2.0,2.5,3.0,3.5,4.0,4.5,5.0)) %>%
-  filter(culture.values.stars %in% c(0,0.5,1.0,1.5,2.0,2.5,3.0,3.5,4.0,4.5,5.0)) %>%
-  filter(carrer.opportunities.stars %in% c(0,0.5,1.0,1.5,2.0,2.5,3.0,3.5,4.0,4.5,5.0)) %>%
-  filter(comp.benefit.stars %in% c(0,0.5,1.0,1.5,2.0,2.5,3.0,3.5,4.0,4.5,5.0)) %>%
-  filter(senior.mangemnet.stars %in% c(0,0.5,1.0,1.5,2.0,2.5,3.0,3.5,4.0,4.5,5.0)) %>% 
-  select(one_of(choice))
-let x= new work()
+//need to add new cors
+getBroken_Matrix = memoise(function(comp){
+
+  advice.to.mgmt = data %>% select(company,advice.to.mgmt) %>% filter(advice.to.mgmt != 'none', company == comp)
+  corpus_advice = Corpus(VectorSource(advice.to.mgmt$advice.to.mgmt))
+  corpus_advice = tm_map(corpus_advice, content_transformer(tolower))
+  corpus_advice = tm_map(corpus_advice, removeNumbers)
+  corpus_advice = tm_map(corpus_advice, removeWords ,stopwords('english'))
+  corpus_advice = tm_map(corpus_advice, removePunctuation)
+  corpus_advice = tm_map(corpus_advice, stripWhitespace)
+  corpus_advice = tm_map(corpus_advice, removeWords,c("get","told","gave","took","can", "could"))
+  tdm_advice = TermDocumentMatrix(corpus_advice, control = list(minWordLength = 1))
+  tdm_advice = removeSparseTerms(tdm_advice, 0.9)
+  m_advice = as.matrix(tdm_advice)
+  filter(rowSums(m_advice), decreasing = False)
+})
+
+
+summary = data %>% select(company,summary) %>% filter(company == comp)
+corpus_sum = Corpus(VectorSource(summary$summary))
+corpus_sum = tm_map(corpus_sum, content_transformer(tolower))
+corpus_sum = tm_map(corpus_sum, removeNumbers)
+corpus_sum = tm_map(corpus_sum, removeWords ,stopwords('english'))
+corpus_sum = tm_map(corpus_sum, removePunctuation)
+corpus_sum = tm_map(corpus_sum, stripWhitespace)
+corpus_sum = tm_map(corpus_sum, removeWords,c("get","told","gave","took","can", "could"))
+tdm_sum= TermDocumentMatrix(corpus_sum,control = list(minWordLength = 1))
+tdm_sum = removeSparseTerms(tdm_sum, 0.9)
+m_sum= as.matrix(tdm_sum)
+sort(rowSums(m_sum), decreasing = TRUE)
+})
 
 # eliminate extra white spaces
 corpus_google_summary =

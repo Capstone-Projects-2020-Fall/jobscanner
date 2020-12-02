@@ -64,7 +64,10 @@ select(one_of(choice))
     
     hr(),
     
+    br(),
     
+
+    hd(), 
     
     sidebarMenu(
       menuItem("Job Scanner Team: this dataset are from glassdoor scraping data,same source as our applicant panel data.")
