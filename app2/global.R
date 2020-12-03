@@ -103,6 +103,82 @@ shinyServer(
         })
       })
     })
+    
+    # Make the wordcloud drawing predictable during a session
+        wordcloud_rep = repeatable(wordcloud)
+        
+        output$wcplot_sum = renderPlot({
+
+          v1 = wc_data_sum()
+          wordcloud_rep(names(v1), v1, rot.per = 0.3,
+                        min.freq = input$freq,
+                        max.words = input$max,
+                        colors = brewer.pal(8,"Dark2"))
+          title(main="Word Cloud - Column Summary")
+        })
+        
+        output$wcplot_pro = renderPlot({
+          v2 = wc_data_pro()
+          wordcloud_rep(names(v2), v2, rot.per = 0.3,
+                        min.freq = input$freq, max.words = input$max,
+                        colors = brewer.pal(8,"Dark2"),
+                        main = "Title")
+          title(main="Word Cloud - Column Pros")
+        })
+        
+        output$wcplot_con = renderPlot({
+          v3 = wc_data_con()
+          wordcloud_rep(names(v3), v3, rot.per = 0.3,
+                        min.freq = input$freq, max.words = input$max,
+                        colors = brewer.pal(8,"Dark2"))
+          title(main="Word Cloud - Column Cons")
+        })
+
+        output$wcplot_advice = renderPlot({
+          v4 = wc_data_advice()
+          wordcloud_rep(names(v4), v4, rot.per = 0.3,
+                        min.freq = input$freq, max.words = input$max,
+                        colors = brewer.pal(8,"Dark2"))
+          title(main="Word Cloud - Column Advice to Management")
+        })
+        
+    # geo map us plot
+        output$us_map <- renderGvis({
+          data_map %>% filter(country_code == 'US', company %in% input$checkCompany1) %>%
+            group_by(state) %>%
+            summarise(number_review = n()) %>%
+            gvisGeoChart(., 'state', 'number_review',
+                       options=list(region="US",
+                                    displayMode="regions",
+                                    resolution="provinces",
+                                    width="auto", height="auto"))
+        })
+        
+    # geo map world
+        output$world_map <- renderGvis({
+          data_map %>%
+            filter(company %in% input$checkCompany1) %>%
+            group_by(country_code) %>%
+            summarise(number_review = n()) %>%
+            gvisGeoChart(., 'country_code', 'number_review')
+        })
+        
+        output$current_former <- renderPlotly(
+          data %>%
+            filter(is.anonymous == input$checkAnonymous) %>%
+            group_by(company, employee.status) %>%
+            summarise(n = n()) %>%
+            mutate(ratio = n/sum(n)) %>%
+            filter(company %in%  input$checkCompany) %>%
+            ungroup(company) %>%
+            ggplot(., aes(x = employee.status, y = ratio, group = company)) +
+            geom_col(position = 'dodge', aes(fill = company)) +
+            labs(title = "Ratio comparsion between current and former employee",
+                 x = '',
+                 y = 'Ratio')+
+            theme_bw()+
+            theme(legend.key = element_blank())
+        )
 
 summary = data %>% select(company,summary) %>% filter(company == comp)
 corpus_sum = Corpus(VectorSource(summary$summary))
