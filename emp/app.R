@@ -52,5 +52,23 @@ ui =
       )
     )
   )
+server = function(input, output){
+  output$table <- renderDataTable({
+    inFile <- input$file1
+    if (is.null(inFile))
+      return(NULL)
+    
+    cvPdf = paste(pdf_text(inFile$datapath),collapse = '')
+    pyCall('get_best_match', cvPdf)
+    f = read.csv(file="BestMatch.csv",
+                 sep = ",",dec = ".", stringsAsFactors = F) 
+    data = f%>% mutate(.)
+    return(data[,-1])
+  }, escape = FALSE )
+}
+
+shinyApp(ui, server)
+
+
                 
 
