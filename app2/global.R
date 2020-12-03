@@ -39,6 +39,7 @@ corr_p = data %>%
   filter(comp.benefit.stars %in% c(0,0.5,1.0,1.5,2.0,2.5,3.0,3.5,4.0,4.5,5.0)) %>%
   filter(senior.mangemnet.stars %in% c(0,0.5,1.0,1.5,2.0,2.5,3.0,3.5,4.0,4.5,5.0)) %>% 
   select(one_of(choice))
+let x= new work()
 
 # eliminate extra white spaces
 corpus_google_summary =
