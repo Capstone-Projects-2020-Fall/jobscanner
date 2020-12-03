@@ -125,3 +125,14 @@ $(document).ready(function () {
 <pre class="r"><code># cross validation with 5 folds to return RMSE for each method (Higher RMSE is higher error)
 MytrControl&lt;-trainControl(method = &quot;cv&quot;, number = 5,verboseIter = TRUE)
 
+#Select Algorithm according to you selection
+if(input$PredictionMethod==&quot;Linear regression&quot;){
+      fit&lt;-train(salary~.,data = Salaries,method=&quot;lm&quot;,trControl=MytrControl)
+}
+else if(input$PredictionMethod==&quot;Decision Tree&quot;){
+      fit&lt;-train(salary~.,data = Salaries,method=&quot;rpart&quot;,trControl=MytrControl)
+}
+else if(input$PredictionMethod==&quot;Random Forest&quot;){
+      fit&lt;-train(salary~.,data = Salaries,method=&quot;rf&quot;,trControl=MytrControl)
+}
+
