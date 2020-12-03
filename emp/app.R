@@ -23,4 +23,15 @@ ui =
                   accept=c('pdf'))
         
       )
+    ),
+    dashboardBody(
+      tabItems(
+        tabItem(tabName = 'about',
+                fluidRow(
+                  box(title = 'Candidate Matching for employer!!', status = "primary", solidHeader = TRUE, collapsible = F, width = 12,
+                      br(),
+                      tags$p("This app allows user use JD to find best candidate matches in database based on Jaccard similarity of the resume and job description.")
+                  ))
+                ,
+                
 
