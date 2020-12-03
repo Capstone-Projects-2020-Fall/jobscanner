@@ -116,3 +116,12 @@ $(document).ready(function () {
 <h2>About This shiny Application</h2>
 <p>This shiny application was designed as a sub panel of job scanner matching function</p>
 </div>
+
+<div id="what-do-this-shiny-application-do" class="section level2">
+<h2>What do this shiny application do ?</h2>
+<p>In this application I picked a dataset about scholars salary (See “About Salary Dataset” tab for detailed info).<br /></p>
+<p>According to that dataset we will try to predict the salary of a scholar with a given criteria (rank,discipline,yrs.since.phd,yrs.service and sex), since including Kevin many will go to grad school some how, this will helps a lot of people in many ways.<br /></p>
+<p>By selecting desired machine learning algorithm: Linear regression, Decision Tree or Random Forest, we will estimate the fair salary for a Professor with such criteria.</p>
+<pre class="r"><code># cross validation with 5 folds to return RMSE for each method (Higher RMSE is higher error)
+MytrControl&lt;-trainControl(method = &quot;cv&quot;, number = 5,verboseIter = TRUE)
+
