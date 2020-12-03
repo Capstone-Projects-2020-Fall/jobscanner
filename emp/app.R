@@ -32,6 +32,16 @@ ui =
                       br(),
                       tags$p("This app allows user use JD to find best candidate matches in database based on Jaccard similarity of the resume and job description.")
                   ))
-                ,
+                , fluidRow(
+                  box(title = "About Me", status = "primary", solidHeader = TRUE, collapsible = T, collapsed = T,width = 12,
+                      column(
+                        width = 10,
+                        h4("Job Scanner Team"),
+                        tags$p("(greetings from Team leader Zhang)"),
+                        
+                        tags$hr()
+                      )
+                  ))
+        ),
                 
 
