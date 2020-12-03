@@ -43,5 +43,14 @@ ui =
                       )
                   ))
         ),
+        tabItem(tabName = "search",
+                fluidRow(
+                  box(width = NULL, status = "primary", solidHeader = TRUE,
+                      title = "Your top matched job, hand picked by team from CIS 4398!",dataTableOutput("table"))
+                )
+        )
+      )
+    )
+  )
                 
 
