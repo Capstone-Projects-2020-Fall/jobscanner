@@ -96,3 +96,19 @@ shinyServer(function(input, output) {
     
     grid.arrange(plotRank,plotDiscipline,plotSincePhd,plotSinceService,plotSex,nrow=1,ncol=5)
   })
+  
+  output$EstimatedSalary<- renderTable({
+    list("Prediction Method"=input$PredictionMethod,"Estimated Salary"=PredictSalaryLM()[1], "RMSE/std dev"= MethodSelection()$results[1,2])
+  })
+  
+  output$EnteredCase<- renderTable({
+    DataEntryCase()
+  })
+  
+  output$SalariesTable<- renderDataTable({
+    Salaries
+  })
+  
+  
+  
+})
