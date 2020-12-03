@@ -39,6 +39,8 @@ if (window.hljs) {
 }
 </script>
 
+
+
 <style type="text/css">
 h1 {
   font-size: 34px;
@@ -65,6 +67,7 @@ h6 {
   text-align: left;
 }
 </style>
+
 
 </head>
 
@@ -94,6 +97,9 @@ button.code-folding-btn:focus {
   outline: none;
 }
 </style>
+
+
+
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
@@ -104,6 +110,12 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
+
+
+
+
+
+
 <div class="fluid-row" id="header">
 
 
@@ -116,16 +128,15 @@ $(document).ready(function () {
 <h2>About This shiny Application</h2>
 <p>This shiny application was designed as a sub panel of job scanner matching function</p>
 </div>
-
 <div id="what-do-this-shiny-application-do" class="section level2">
 <h2>What do this shiny application do ?</h2>
 <p>In this application I picked a dataset about scholars salary (See “About Salary Dataset” tab for detailed info).<br /></p>
-<p>According to that dataset we will try to predict the salary of a scholar with a given criteria (rank,discipline,yrs.since.phd,yrs.service and sex), since including Kevin many will go to grad school some how, this will helps a lot of people in many ways.<br /></p>
+<p>According to that dataset we will try to predict the salary of a scholar with a given criteria (rank,discipline,yrs.since.phd,yrs.service and sex), since including Kevin many will go to grad school some how. which YOU will input in the shiny input gadgets (to the left of the shiny page).<br /></p>
 <p>By selecting desired machine learning algorithm: Linear regression, Decision Tree or Random Forest, we will estimate the fair salary for a Professor with such criteria.</p>
 <pre class="r"><code># cross validation with 5 folds to return RMSE for each method (Higher RMSE is higher error)
 MytrControl&lt;-trainControl(method = &quot;cv&quot;, number = 5,verboseIter = TRUE)
 
-#Select Algorithm according to you selection
+#Select Algoeithm according to you selection
 if(input$PredictionMethod==&quot;Linear regression&quot;){
       fit&lt;-train(salary~.,data = Salaries,method=&quot;lm&quot;,trControl=MytrControl)
 }
@@ -156,6 +167,7 @@ $(document).ready(function () {
   bootstrapStylePandocTables();
 });
 
+
 </script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
@@ -170,4 +182,3 @@ $(document).ready(function () {
 
 </body>
 </html>
-
