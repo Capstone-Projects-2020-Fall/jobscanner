@@ -136,3 +136,23 @@ else if(input$PredictionMethod==&quot;Random Forest&quot;){
       fit&lt;-train(salary~.,data = Salaries,method=&quot;rf&quot;,trControl=MytrControl)
 }
 
+#Now to predict using the (fit) model on the (entry) data
+predict(fit,entry)</code></pre>
+<p>After this we will show our estimated salary as a red point on plots of salary against all other variables to show OUR Professor within the other observations in Professors Salaries dataset.</p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
