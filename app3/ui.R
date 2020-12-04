@@ -14,3 +14,10 @@ library(gridExtra)
 library(caret)
 library(randomForest)
 library(ipred)
+
+
+
+Salaries<-read.csv("./Salaries.csv")
+Salaries<<-Salaries[,-1]
+
+
