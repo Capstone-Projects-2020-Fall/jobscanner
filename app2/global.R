@@ -26,6 +26,7 @@ choice = c('overall.ratings',
 
 companies = c('google','amazon','facebook','netflix','apple','microsoft')
 # data set for corr plot
+
 corr_p = data %>%
   mutate(work.balance.stars = as.numeric(work.balance.stars),
          culture.values.stars = as.numeric(culture.values.stars),
