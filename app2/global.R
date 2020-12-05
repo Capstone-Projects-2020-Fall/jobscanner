@@ -179,6 +179,33 @@ shinyServer(
             theme_bw()+
             theme(legend.key = element_blank())
         )
+        output$time_rating <- renderPlotly(
+          r_time_rating() %>%
+            group_by(year, company) %>%
+            summarise(avg = mean(get(input$Selection))) %>%
+            ungroup(company) %>%
+            ggplot(., aes(x = year, y = avg)) +
+            geom_line(aes(color = company), size = 2) +
+            labs(title = "Averge rating over time",
+                 x = 'Year',
+                 y = 'Average Rating') +
+            theme_bw()
+        )
+        
+        output$avg_rating <- renderPlotly(
+          r_time_rating() %>%
+            group_by(company) %>%
+            summarise(avg = mean(get(input$Selection))) %>%
+            ungroup(company) %>%
+            ggplot(., aes(x = reorder(company, + avg), avg)) +
+            geom_bar(stat = 'identity', colour = 'black', aes(fill = company))+
+            coord_flip()+
+            geom_text(aes(label = round(avg,2), y = avg/2), size = 4.5) +
+            labs(title = "Overall Rating Comparison",
+                 x = 'Average Score',
+                 y = 'Company') +
+            theme_bw()
+        )
 
 summary = data %>% select(company,summary) %>% filter(company == comp)
 corpus_sum = Corpus(VectorSource(summary$summary))
