@@ -1,50 +1,75 @@
-#
-# This is a Shiny web application. You can run the application by clicking
-# the 'Run App' button above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
 
 library(shiny)
+library(shinydashboard)
+library(dplyr)
+library(tidyr)
+library(DT)
+library(PythonInR)
+library(pdftools)
+library(rsconnect)
 
-# Define UI for application that draws a histogram
-ui <- fluidPage(
-   
-   # Application title
-   titlePanel("Old Faithful Geyser Data"),
-   
-   # Sidebar with a slider input for number of bins 
-   sidebarLayout(
-      sidebarPanel(
-         sliderInput("bins",
-                     "Number of bins:",
-                     min = 1,
-                     max = 50,
-                     value = 30)
-      ),
-      
-      # Show a plot of the generated distribution
-      mainPanel(
-         plotOutput("distPlot")
+
+
+pyConnect()
+pyExecfile("helper.py")
+
+ui = 
+  dashboardPage(
+    dashboardHeader(title = 'JobScanner'),
+    dashboardSidebar(
+      sidebarMenu(
+        menuItem("About", tabName = "about", icon = icon("info")),
+        menuItem("Search Job", tabName = "search", icon = icon("database")),
+        fileInput('file1', "Insert your CV as PDF file",
+                  accept=c('pdf'))
+        
       )
-   )
-)
+    ),
+    dashboardBody(
+      tabItems(
+        tabItem(tabName = 'about',
+                fluidRow(
+                  box(title = 'Resume/Job Matching (We made it!)', status = "primary", solidHeader = TRUE, collapsible = F, width = 12,
+                      br(),
+                      tags$p("This app allows user use their pdf resume to find best job matches on Glassdoor.com, based on Jaccard similarity of the resume and job description.")
+                  ))
+                ,
+                fluidRow(
+                  box(title = "About Me", status = "primary", solidHeader = TRUE, collapsible = T, collapsed = T,width = 12,
+                      column(
+                        width = 10,
+                        h4("Job Scanner Team"),
+                        tags$p("This is a test and Chi def love her team! (greetings from Team leader Zhang)"),
+                        
+                        tags$hr()
+                      )
+                  ))
+        ),
+        tabItem(tabName = "search",
+                fluidRow(
+                  box(width = NULL, status = "primary", solidHeader = TRUE,
+                      title = "Your top matched job, hand picked by team from CIS 4398!",dataTableOutput("table"))
+                )
+        )
+      )
+    )
+  )
 
-# Define server logic required to draw a histogram
-server <- function(input, output) {
-   
-   output$distPlot <- renderPlot({
-      # generate bins based on input$bins from ui.R
-      x    <- faithful[, 2] 
-      bins <- seq(min(x), max(x), length.out = input$bins + 1)
-      
-      # draw the histogram with the specified number of bins
-      hist(x, breaks = bins, col = 'darkgray', border = 'white')
-   })
+server = function(input, output){
+  output$table <- renderDataTable({
+    inFile <- input$file1
+    if (is.null(inFile))
+      return(NULL)
+    
+    cvPdf = paste(pdf_text(inFile$datapath),collapse = '')
+    pyCall('get_best_match', cvPdf)
+    f = read.csv(file="BestMatch.csv",
+                 sep = ",",dec = ".", stringsAsFactors = F) 
+    data = f%>% mutate(.)
+    return(data[,-1])
+  }, escape = FALSE )
 }
 
-# Run the application 
-shinyApp(ui = ui, server = server)
+shinyApp(ui, server)
+
 
