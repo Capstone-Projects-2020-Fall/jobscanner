@@ -39,4 +39,12 @@ shinyUI(fluidPage(
                                    radioButtons("PredictionMethod", "Prediction Method :", c("Linear regression", "Decision Tree", "Random Forest"),"Linear regression"),
                                    submitButton("Apply Selection")
                       ),
-                      
+					  
+                      # Show Salary Estimation, Plots and Dataset
+                      mainPanel(width = 9,tabsetPanel(
+                        tabPanel("Salary Estimation & Plots", 
+                                 tableOutput("EstimatedSalary"),
+                                 plotOutput("Plots"),
+                                 tableOutput("EnteredCase")),
+                        tabPanel("Salaries Dataset", dataTableOutput("SalariesTable"))
+                      ))),					  
