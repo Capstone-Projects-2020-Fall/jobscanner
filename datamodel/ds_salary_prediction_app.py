@@ -35,3 +35,12 @@ desc_length = st.slider('Choose Approximate length of job description',min_value
 Revenue_1,Revenue_Less_than_10_million,Revenue_Unknown_Non_Applicable, Revenue_1_to_5_billion,Revenue_10_to_50_billion, Revenue_10_to_50_million,Revenue_100_to_500_billion,Revenue_100_to_500_million, Revenue_5_to_10_billion,Revenue_50_to_100_billion,Revenue_50_to_100_million,Revenue_500_million_to_1_billion,Revenue_500_billion = 0,0,0,0,0,0,0,0,0,0,0,0,0
 
 
+list_of_revenue = list(df['Revenue'].unique())
+for i in range(len(list_of_revenue)):
+    if list_of_revenue[i] == "-1":
+        list_of_revenue[i] = "₹1 to ₹5 billion (INR)"
+        break
+
+revenue = st.selectbox('Revenue', list_of_revenue,index=0)
+
+
