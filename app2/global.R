@@ -42,3 +42,13 @@ corr_p = data %>%
 
 colnames(corr_p) <- c('overall','work.balance','culture.values',
                       'carrer.oppo','comp.benefit','senior.mange')
+
+# cleaned a data set for mapping:
+data_map = 
+  data %>% 
+    filter(., location != 'none') %>% 
+    mutate(country = ifelse(str_detect(location, regex("\\)")) == FALSE, 
+                            'United States of America', 
+                            gsub(".*[(]([^.]+)[)].*","\\1",location))) %>% 
+    mutate(country_code = countrycode(country,'country.name','iso2c')) %>% 
+    mutate(city = ifelse(country_code=='US',gsub("([^.]+)[,].*",'\\1',location),NA)) %>% 
