@@ -16,4 +16,22 @@ This app predicts the Salary for **computer science graduates** over 2 years bas
 
 st.subheader('Company Details \n Check Glassdoor for exact values, if unsure')
 
+Rating = st.slider('Glassdoor Rating of the Company',min_value=1.0, max_value=5.0, step=0.1)
+
+# st.subheader('Number of Competitors')
+
+No_of_Competitors = st.slider('Number of Competitors',min_value=0.0, max_value=4.0, step=1.0)
+
+# st.subheader('Company Age')
+
+Age = st.slider('Age of the Company', step=1.0, min_value=0.0,max_value=330.0)
+
+## description length
+# st.subheader("Choose Approximate length of job description")
+
+desc_length = st.slider('Choose Approximate length of job description',min_value=110.0, max_value=15121.0, step=10.0)
+
+# st.subheader("Choose Revenue of the company")
+Revenue_1,Revenue_Less_than_10_million,Revenue_Unknown_Non_Applicable, Revenue_1_to_5_billion,Revenue_10_to_50_billion, Revenue_10_to_50_million,Revenue_100_to_500_billion,Revenue_100_to_500_million, Revenue_5_to_10_billion,Revenue_50_to_100_billion,Revenue_50_to_100_million,Revenue_500_million_to_1_billion,Revenue_500_billion = 0,0,0,0,0,0,0,0,0,0,0,0,0
+
 
