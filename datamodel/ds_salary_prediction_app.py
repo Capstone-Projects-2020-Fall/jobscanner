@@ -70,3 +70,12 @@ elif revenue == "₹500 million to ₹1 billion (INR)":
 elif revenue == "₹500+ billion (INR)":#13
     Revenue_500_billion = 1
 
+
+Size_1,Size_1_to_50_employees, Size_10000_employees,Size_1001_to_5000_employees,Size_201_to_500_employees,Size_5001_to_10000_employees, Size_501_to_1000_employees,Size_51_to_200_employees, Size_Unknown =0,0,0,0,0,0,0,0,0
+
+list_of_size = list(df['Size'].unique())
+for i in range(len(list_of_size)):
+    if list_of_size[i] == "-1":
+        list_of_size[i] = "N/A"
+        break
+
