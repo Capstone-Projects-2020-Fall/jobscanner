@@ -78,4 +78,27 @@ for i in range(len(list_of_size)):
     if list_of_size[i] == "-1":
         list_of_size[i] = "N/A"
         break
+        
+size = st.selectbox('Company Size',list_of_size,index=0)
+
+# st.write(list(df['Size'].unique()))
+
+if  size == "N/A":#1
+    Size_1 = 1
+elif size =="1 to 50 employees":
+    Size_1_to_50_employees = 1
+elif size == "10000+ employees":
+    Size_10000_employees = 1 #dont use and operator
+elif size == '1001 to 5000 employees':
+    Size_1001_to_5000_employees = 1
+elif size == "201 to 500 employees":#5
+    Size_201_to_500_employees = 1
+elif size == "5001 to 10000 employees":
+    Size_5001_to_10000_employees = 1
+elif size == "501 to 1000 employees":
+    Size_501_to_1000_employees = 1
+elif size == "51 to 200 employees":
+    Size_51_to_200_employees = 1
+elif size == "Unknown":#9
+    Size_Unknown = 1
 
