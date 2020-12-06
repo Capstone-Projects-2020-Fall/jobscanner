@@ -43,4 +43,30 @@ for i in range(len(list_of_revenue)):
 
 revenue = st.selectbox('Revenue', list_of_revenue,index=0)
 
+if revenue == "₹1 to ₹5 million (INR)":
+    Revenue_1 = 1
+elif revenue =="Less than ₹10 million (INR)":
+    Revenue_Less_than_10_million = 1
+elif revenue == "Unknown / Non-Applicable":
+    Revenue_Unknown_Non_Applicable = 1 #dont use and operator
+elif revenue == '₹1 to ₹5 billion (INR)':
+    Revenue_1_to_5_billion = 1
+elif revenue == "₹10 to ₹50 billion (INR)":#5
+    Revenue_10_to_50_billion = 1
+elif revenue == "₹10 to ₹50 million (INR)":
+    Revenue_10_to_50_million = 1
+elif revenue == "₹100 to ₹500 billion (INR)":
+    Revenue_100_to_500_billion = 1
+elif revenue == "₹10 to ₹500 million (INR)":
+    Revenue_100_to_500_million = 1
+elif revenue == "₹5 to ₹10 billion (INR)":
+    Revenue_5_to_10_billion = 1
+elif revenue == "₹50 to ₹100 billion (INR)":
+    Revenue_50_to_100_billion = 1
+elif revenue == "₹50 to ₹100 million (INR)":
+    Revenue_50_to_100_million = 1
+elif revenue == "₹500 million to ₹1 billion (INR)":
+    Revenue_500_million_to_1_billion = 1
+elif revenue == "₹500+ billion (INR)":#13
+    Revenue_500_billion = 1
 
