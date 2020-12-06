@@ -51,6 +51,6 @@ data_map =
                             'United States of America', 
                             gsub(".*[(]([^.]+)[)].*","\\1",location))) %>% 
     mutate(country_code = countrycode(country,'country.name','iso2c')) %>% 
+    mutate(city = ifelse(country_code=='US',gsub("([^.]+)[,].*",'\\1',location),NA)) %>% 
 	mutate(state = ifelse(country_code == 'US', gsub(' ', '', paste('US-', gsub(".*[,]([^.]+).*", "\\1",location))), NA)) %>% 
     select(company,dates,country_code,city,state,choice)
-    mutate(city = ifelse(country_code=='US',gsub("([^.]+)[,].*",'\\1',location),NA)) %>% 
