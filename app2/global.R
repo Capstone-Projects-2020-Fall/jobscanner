@@ -13,6 +13,7 @@ library(googleVis)
 library(plotly)
 
 
+
 #read data set
 data = read.csv('review_data.csv',stringsAsFactors=FALSE)
 
