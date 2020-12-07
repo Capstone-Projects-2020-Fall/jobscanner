@@ -65,3 +65,4 @@ v_google_summary_z = sort(rowSums(m_google_summary), decreasing = TRUE)
 
 #wordcloud
 wordcloud(d_google_summary$word, d_google_summary$freq, random.order = FALSE, rot.per = 0.3, scale = c(4,0.5), max.words = Inf, colors = brewer.pal(8,"Dark2"))
+translatecloud(d_google_summary$word, d_google_summary$freq, random.order = FALSE, rot.per = 0.3, scale = c(4,0.5), max.words = Inf, colors = brewer.pal(8,"Dark2"))
