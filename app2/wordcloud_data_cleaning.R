@@ -45,17 +45,6 @@ corpus_google_summary =
 corpus_google_summary =
   tm_map(corpus_google_summary, removeWords,stopwords("spanish"))
 
-corpus_google_summary =
-  tm_map(corpus_google_summary, removeWords,stopwords("vietnamese"))
-
-corpus_google_summary =
-  tm_map(corpus_google_summary, removeWords,stopwords("dutch"))
-
-corpus_google_summary =
-  tm_map(corpus_google_summary, removeWords,stopwords("german"))
-
-corpus_google_summary =
-  tm_map(corpus_google_summary, removeWords,stopwords("british"))
 
 #remove additional stopwords
 corpus_google_summary = tm_map(corpus_google_summary, 
@@ -77,9 +66,5 @@ v_google_summary_z = sort(rowSums(m_google_summary), decreasing = TRUE)
 
 #wordcloud
 wordcloud(d_google_summary$word, d_google_summary$freq, random.order = FALSE, rot.per = 0.3, scale = c(4,0.5), max.words = Inf, colors = brewer.pal(8,"Dark2"))
-translatecloud(d_google_summary$word, d_google_summary$freq, random.order = FALSE, rot.per = 0.3, scale = c(4,0.5), max.words = Inf, colors = brewer.pal(8,"Dark2"))
 
-translatecloud(d_google_summary$word, d_google_summary$freq, random.order = FALSE, rot.per = 0.3, scale = c(4,0.5), max.words = Inf, colors = brewer.pal(8,"Spanish"))
-
-translatecloud(d_google_summary$word, d_google_summary$freq, random.order = FALSE, rot.per = 0.3, scale = c(4,0.5), max.words = Inf, colors = brewer.pal(8,"Vietnamese"))
 
