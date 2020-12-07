@@ -56,7 +56,12 @@ tdm_google_summary = TermDocumentMatrix(corpus_google_summary)
 m_google_summary = as.matrix(tdm_google_summary)
 v_google_summary = sort(rowSums(m_google_summary), decreasing = TRUE)
 d_google_summary = data.frame(word = names(v_google_summary), freq=v_google_summary)
-
+tdm_google_summary_e = TermDocumentMatrix(corpus_google_summary)
+m_google_summary_e = as.matrix(tdm_google_summary)
+v_google_summary_e = sort(rowSums(m_google_summary), decreasing = TRUE)
+tdm_google_summary_z = TermDocumentMatrix(corpus_google_summary)
+m_google_summary_z = as.matrix(tdm_google_summary)
+v_google_summary_z = sort(rowSums(m_google_summary), decreasing = TRUE)
 
 #wordcloud
 wordcloud(d_google_summary$word, d_google_summary$freq, random.order = FALSE, rot.per = 0.3, scale = c(4,0.5), max.words = Inf, colors = brewer.pal(8,"Dark2"))
