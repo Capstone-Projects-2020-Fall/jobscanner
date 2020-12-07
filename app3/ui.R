@@ -50,4 +50,12 @@ shinyUI(fluidPage(
                       ))),
              tabPanel("About This Panel",
                       mainPanel(
-                        includeHTML("AboutApplication.html"))),					  
+                        includeHTML("AboutApplication.html"))),
+             tabPanel("About Salaries Dataset",
+                      mainPanel(
+                        includeHTML("AboutData.html")))
+  )
+))
+
+
+						
