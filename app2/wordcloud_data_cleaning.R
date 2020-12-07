@@ -47,3 +47,6 @@ m_google_summary = as.matrix(tdm_google_summary)
 v_google_summary = sort(rowSums(m_google_summary), decreasing = TRUE)
 d_google_summary = data.frame(word = names(v_google_summary), freq=v_google_summary)
 
+
+#wordcloud
+wordcloud(d_google_summary$word, dgoogle_summary$freq, random.order = FALSE, rot.per = 0.3, scale = c(4,0.5), max.words = Inf, colors = brewer.pal(8,"Dark2"))
