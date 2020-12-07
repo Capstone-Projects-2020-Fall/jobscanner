@@ -30,6 +30,21 @@ corpus_google_summary =
   tm_map(corpus_google_summary, removePunctuation)
 # eliminate extra white spaces
 
+corpus_google_summary =
+  tm_map(corpus_google_summary, removeWords,stopwords("spanish"))
+
+corpus_google_summary =
+  tm_map(corpus_google_summary, removeWords,stopwords("vietnamese"))
+
+corpus_google_summary =
+  tm_map(corpus_google_summary, removeWords,stopwords("dutch"))
+
+corpus_google_summary =
+  tm_map(corpus_google_summary, removeWords,stopwords("german"))
+
+corpus_google_summary =
+  tm_map(corpus_google_summary, removeWords,stopwords("british"))
+
 #remove additional stopwords
 corpus_google_summary = tm_map(corpus_google_summary, 
                                removeWords, 
