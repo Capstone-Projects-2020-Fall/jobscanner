@@ -13,6 +13,15 @@ corpus_google_summary =
   Corpus(VectorSource(google_summary$summary))
 
 corpus_google_summary[[1]][1]
+new_google_summary =
+  data %>%
+    select(company,summary) %>%
+    filter(company == "google")
+
+corpus_google_summary =
+  Corpus(VectorSource(google_summary$summary))
+
+corpus_google_summary[[1]][1]
 
 # Text Cleaning
 
