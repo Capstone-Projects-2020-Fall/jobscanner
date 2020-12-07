@@ -3,7 +3,10 @@ library(wordcloud)
 library(dplyr)
 
 data = read.csv("review_data.csv", header = TRUE)
-
+data = read.csv("raw.csv", header = TRUE)
+data = read.csv("test server.csv", header = TRUE)
+data = read.csv("press.csv", header = TRUE)
+data = read.csv("word.csv", header = TRUE)
 google_summary = 
   data %>% 
     select(company,summary) %>% 
