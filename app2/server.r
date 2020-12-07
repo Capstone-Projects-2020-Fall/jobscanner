@@ -102,7 +102,7 @@ shinyServer(
                                 width="auto", height="auto"))
     })
     
-# geo map world
+
     output$world_map <- renderGvis({
       data_map %>% 
         filter(company %in% input$checkCompany1) %>% 
