@@ -59,6 +59,50 @@ shinyUI(dashboardPage(skin = "blue",
                                 value = FALSE)
                 )
               )
+      ),
+      
+      tabItem(tabName = 'map',
+              fluidRow(
+                box(htmlOutput('us_map')),
+                box(htmlOutput('world_map')),
+                box(
+                  title = "Inputs", status = 'warning', solidHeader = TRUE,
+                  checkboxGroupInput(inputId = "checkCompany1",
+                                     h3("company:"),
+                                     choices = list('google'='google',
+                                                    'amazon'= 'amazon',
+                                                    'facebook' = 'facebook',
+                                                    'netflix' = 'netflix',
+                                                    'apple' = 'apple',
+                                                    'microsoft' = 'microsoft'),
+                                     selected = c('google', 'amazon','facebook','netflix','apple','microsoft'))
+                  
+                )
+              )
+
+      ),
+      
+      tabItem(tabName = "Selection",
+              fluidRow(
+                box(plotlyOutput("boxplot")),
+                box(plotlyOutput('time_rating')),
+                #box(plotlyOutput('avg_rating')),
+                box(
+                  title = "Inputs", status = 'warning', solidHeader = TRUE,
+                  selectInput(inputId = "Selection", 
+                              label = "Select item to Display", 
+                              choices = choice)
+                )
+              )       
+      ),
+      
+      tabItem(tabName = "wordcloud",
+              fluidRow(
+                box(plotOutput("wcplot_sum")),
+                box(plotOutput('wcplot_pro')),
+                box(plotOutput('wcplot_con')),
+                box(plotOutput('wcplot_advice'))
+              )
       )
     )
   )
