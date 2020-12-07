@@ -35,3 +35,15 @@ corpus_google_summary =
 #corpus_google_summary = 
 #  tm_map(corpus_google_summary, stemDocument)
 
+#remove additional stopwords
+corpus_google_summary = tm_map(corpus_google_summary, 
+                               removeWords, 
+                               c("get","told","gave","took","can", "could"))
+corpus_google_summary[[1]][1]
+
+#Create TDM
+tdm_google_summary = TermDocumentMatrix(corpus_google_summary)
+m_google_summary = as.matrix(tdm_google_summary)
+v_google_summary = sort(rowSums(m_google_summary), decreasing = TRUE)
+d_google_summary = data.frame(word = names(v_google_summary), freq=v_google_summary)
+
