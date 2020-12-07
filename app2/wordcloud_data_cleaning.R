@@ -29,11 +29,6 @@ corpus_google_summary =
 corpus_google_summary = 
   tm_map(corpus_google_summary, removePunctuation)
 # eliminate extra white spaces
-corpus_google_summary = 
-  tm_map(corpus_google_summary, stripWhitespace)
-#Stemming Texts
-#corpus_google_summary = 
-#  tm_map(corpus_google_summary, stemDocument)
 
 #remove additional stopwords
 corpus_google_summary = tm_map(corpus_google_summary, 
