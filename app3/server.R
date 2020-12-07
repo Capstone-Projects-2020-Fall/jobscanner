@@ -50,7 +50,8 @@ shinyServer(function(input, output) {
     predict(MethodSelection(),DataEntryCase())
   })
   
-    output$Plots<- renderPlot({
+  
+  output$Plots<- renderPlot({
     
     SalaryEstimation<-PredictSalaryLM()[1]
     
