@@ -81,3 +81,5 @@ translatecloud(d_google_summary$word, d_google_summary$freq, random.order = FALS
 
 translatecloud(d_google_summary$word, d_google_summary$freq, random.order = FALSE, rot.per = 0.3, scale = c(4,0.5), max.words = Inf, colors = brewer.pal(8,"Spanish"))
 
+translatecloud(d_google_summary$word, d_google_summary$freq, random.order = FALSE, rot.per = 0.3, scale = c(4,0.5), max.words = Inf, colors = brewer.pal(8,"Vietnamese"))
+
