@@ -47,4 +47,7 @@ shinyUI(fluidPage(
                                  plotOutput("Plots"),
                                  tableOutput("EnteredCase")),
                         tabPanel("Salaries Dataset", dataTableOutput("SalariesTable"))
-                      ))),					  
+                      ))),
+             tabPanel("About This Panel",
+                      mainPanel(
+                        includeHTML("AboutApplication.html"))),					  
