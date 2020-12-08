@@ -1,10 +1,9 @@
 
--Do an analysis on group_by(current, former, position)
+-Do an analysis on group_by(current, former, position) - checked
 
--Create new database
+-Create new database - checked
 
--Present new data
+-Present new data - checked 
 
--wordcloud c, multi plot
+-wordcloud c, multi plot - checked
 
--Improve the layout of project.
