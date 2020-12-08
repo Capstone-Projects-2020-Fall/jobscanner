@@ -49,34 +49,7 @@ r
   )
 ),
   
-  dashboardBody(
-    tabItems(
-      tabItem(tabName = "General_Review",
-              fluidRow(infoBoxOutput("Anonymous_Response_Ratio"),
-                       infoBoxOutput("Total_Response"),
-                       infoBoxOutput("Top_Correlation")),
-              fluidRow(
-               # box(plotlyOutput("hist")),
-                box(plotOutput('corr')),
-                box(plotlyOutput('current_former')),
-                box(
-                  title = "Inputs", status = 'warning', solidHeader = TRUE,
-                  checkboxGroupInput(inputId = "checkCompany",
-                                     h3("company:"),
-                                     choices = list('google'='google',
-                                                    'amazon'= 'amazon',
-                                                    'facebook' = 'facebook',
-                                                    'netflix' = 'netflix',
-                                                    'apple' = 'apple',
-                                                    'microsoft' = 'microsoft'),
-                                     selected = c('google', 'amazon')),
-                  
-                  checkboxInput(inputId = "checkAnonymous",
-                                'Anonymous Response',
-                                value = FALSE)
-                )
-              )
-      ),
+ 
       
       tabItem(tabName = 'map',
               fluidRow(
