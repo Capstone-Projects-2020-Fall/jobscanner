@@ -73,21 +73,21 @@ shinyServer(
                     main = "Title")
       title(main="Word Cloud - Column Pros")
     })
-    
-    output$wcplot_con = renderPlot({
-      v3 = wc_data_con()
-      wordcloud_rep(names(v3), v3, rot.per = 0.3,
+    output$wcplot_pro = renderPlot({
+      v2 = wc_data_pro()
+      wordcloud_rep(names(v2), v2, rot.per = 0.3,
                     min.freq = input$freq, max.words = input$max,
-                    colors = brewer.pal(8,"Dark2"))
-      title(main="Word Cloud - Column Cons")
+                    colors = brewer.pal(8,"Dark2"),
+                    main = "Title")
+      title(main="Word Cloud - Column Pros")
     })
-
-    output$wcplot_advice = renderPlot({
-      v4 = wc_data_advice()
-      wordcloud_rep(names(v4), v4, rot.per = 0.3,
+    output$wcplot_lite = render({
+      v2 = wc_data_pro()
+      wordcloud_rep(names(v2), v2, rot.per = 0.3,
                     min.freq = input$freq, max.words = input$max,
-                    colors = brewer.pal(8,"Dark2"))
-      title(main="Word Cloud - Column Advice to Management")
+                    colors = brewer.pal(8,"Dark2"),
+                    main = "Title")
+      title(main="Word Cloud - Column Pros")
     })
     
 # geo map us plot
