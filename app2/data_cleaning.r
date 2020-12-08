@@ -4,8 +4,7 @@ library(tidyverse)
 source('helper.R')
 
 review = read.csv("employee_reviews.csv", stringsAsFactors = FALSE)
-
-# seperate job.title column in to several column since there is many information contained in this column.
+# this seperate job.title column in to several column since there is many information contained in this column.
 review1 = separate(review, job.title, c('employee.status', 'position'), sep = '-')
 head(review1)
 
