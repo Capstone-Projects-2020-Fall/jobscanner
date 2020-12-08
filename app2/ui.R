@@ -22,7 +22,8 @@ shinyUI(dashboardPage(skin = "blue",
       
       hr(),
       
-      
+      r()
+r
       
       sidebarMenu(
         menuItem("Job Scanner Team: this dataset are from glassdoor scraping data,same source as our applicant panel data.")
