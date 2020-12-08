@@ -22,7 +22,6 @@ shinyUI(dashboardPage(skin = "blue",
       
       hr(),
       
-      r()
 r
       
       sidebarMenu(
@@ -32,20 +31,7 @@ r
       
     )
   ),
-hundredSlider(
-  width = 350,
-  sidebarMenu(
-    sidebarMenu(
-      menuItem("General_Review", tabName = "General_Review", icon = icon("file-export")),
-      menuItem("Mapping the data", tabName = 'map', icon = icon('map')),
-      menuItem("Rating_Review", tabName = "Selection", icon = icon("bar-chart-o")),
-      hr(),
-      menuItem("Wordcloud", tabName = "wordcloud", icon = icon("cloud-download-alt")),
-      selectizeInput(inputId = "c_select", label = "Choose a company",choices = companies),
-      actionButton("update", "Change"),
-      sliderInput(inputId = "freq", "Minimum Frequency:",min = 30, max = 500, value = 260),
-      sliderInput(inputId = "max", label = "Maximum Number of Words:",min = 1, max = 1000, value = 500)
-    ),
+
 ata %>%
 mutate(work.balance.stars = as.numeric(work.balance.stars),
        culture.values.stars = as.numeric(culture.values.stars),
