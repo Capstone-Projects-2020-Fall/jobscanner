@@ -94,6 +94,15 @@ r
                 box(plotOutput('wcplot_advice'))
               )
       )
+
+rigidTab(tabName = "wordcloud",
+        fluidRow(
+          box(plotOutput("wcplot_sum")),
+          box(plotOutput('wcplot_pro')),
+          box(plotOutput('wcplot_con')),
+          box(plotOutput('wcplot_advice'))
+        )
+)
     )
   )
 )
