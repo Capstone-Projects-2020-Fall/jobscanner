@@ -13,9 +13,9 @@ As for the employee panel, Job scanner will match the job description in pdf or 
 For the rest of the panel, Job scanner will locate the user’s resume and analysis the weakness in it , including giving suggestion of missing keywords suggestion based on the job description of certain industry that user would like to work in. 
 
 #### Front-end style and element design: Kevin
-#### Test conduct: Ruchit
+#### Test conduct and streamlit panel design: Ruchit
 #### Data purify and processing : Chris
-#### Login page + employer panel back-end: Zihan
+#### Test static page + employer panel back-end: Zihan
 #### Data prediction + application panel back-end: Chi
 #### Table insertion and visualization: Ziwei
 #### Application model deployment and linking panel code: Kyle
@@ -24,6 +24,10 @@ For the rest of the panel, Job scanner will locate the user’s resume and analy
 # Test major procedure and result
 (for pre-lease only)
 Video record of test demo: https://youtu.be/Dr1AF8cRAeQ
+Panels/new feature in final demo (please click the website to test it, these will be stable for a long time since the app instances is free): 
+https://jobscanner.shinyapps.io/Scholar1/
+https://jobscanner.shinyapps.io/emp2/
+
 
 First install Ananconda, then:
 ### 1. download the release and replace it with the Chromed Driver in the pre-release .zip files, every single one of it.
