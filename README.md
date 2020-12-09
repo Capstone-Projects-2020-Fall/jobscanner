@@ -24,8 +24,13 @@ For the rest of the panel, Job scanner will locate the user’s resume and analy
 # Test major procedure and result
 (for pre-lease only)
 Video record of test demo: https://youtu.be/Dr1AF8cRAeQ
-Panels/new feature in final demo (please click the website to test it, these will be stable for a long time since the app instances is free): 
+
+Panels/new feature in final demo 
+
+(please click the website to test it, these will be stable for a long time since the app instances is free): 
+
 https://jobscanner.shinyapps.io/Scholar1/
+
 https://jobscanner.shinyapps.io/emp2/
 
 
