@@ -90,7 +90,7 @@ shinyServer(
       title(main="Word Cloud - Column Pros")
     })
     
-# geo map us plot
+
     output$us_map <- renderGvis({
       data_map %>% filter(country_code == 'US', company %in% input$checkCompany1) %>% 
         group_by(state) %>% 
@@ -194,7 +194,7 @@ shinyServer(
  
     )
     
-    # show statistics using infoBox
+   
     output$Anonymous_Response_Ratio <- renderInfoBox({
       a_ratio = data %>% group_by(is.anonymous) %>% 
         summarise(n = n()) %>% 
