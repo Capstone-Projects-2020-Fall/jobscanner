@@ -12,12 +12,6 @@ library(DT)
 library(googleVis)
 library(plotly)
 
-library(corrplot)
-library(stringr)
-library(countrycode)
-library(DT)
-library(googleVis)
-library(plotly)
 
 
 #read data set
