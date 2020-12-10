@@ -1,0 +1,12 @@
+name: Scholar1
+title: Scholar1
+username:
+account: jobscanner
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3366903
+bundleId: 3955487
+url: https://jobscanner.shinyapps.io/Scholar1/
+when: 1607357223.15522
+asMultiple: FALSE
+asStatic: FALSE
