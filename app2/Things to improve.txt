@@ -1,0 +1,10 @@
+
+-Do an analysis on group_by(current, former, position) - checked
+
+-Create new database - checked
+
+-Present new data - checked 
+
+-wordcloud c, multi plot - checked
+
+- improve UI 

@@ -1,1 +1,10 @@
-
+
+This is a document for Kevin and Kyle
+
+- We do UI and database for Job Scanner
+
+- Front end will have Employee & Employer sides
+
+- Database is borrowed from Glassdoor
+    Database is used for Job's description matching
+    Database is used for reviews
