@@ -7,3 +7,4 @@ This is a document for Kevin and Kyle
 
 - Database is borrowed from Glassdoor
     Database is used for Job's description matching
+    Database is used for reviews
