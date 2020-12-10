@@ -222,7 +222,7 @@ m_sum= as.matrix(tdm_sum)
 sort(rowSums(m_sum), decreasing = TRUE)
 })
 
-# eliminate extra white spaces
+# eliminate extra white spaces - 
 corpus_google_summary =
   tm_map(corpus_google_summary, stripWhitespace)
 colnames(corr_p) <- c('overall','work.balance','culture.values',
@@ -315,7 +315,7 @@ corpus_sum = tm_map(corpus_sum, removePunctuation)
 corpus_sum = tm_map(corpus_sum, stripWhitespace)
 corpus_sum = tm_map(corpus_sum, removeWords,c("get","told","gave","took","can", "could"))
 tdm_sum= TermDocumentMatrix(corpus_sum,control = list(minWordLength = 1))
-tdm_sum = removeSparseTerms(tdm_sum, 0.9)
+tdm_sum = removeSparseTerms(tdm_sum, 1.2)
 m_sum= as.matrix(tdm_sum)
 sort(rowSums(m_sum), decreasing = TRUE)
 })
