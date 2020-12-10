@@ -6,3 +6,4 @@ This is a document for Kevin and Kyle
 - Front end will have Employee & Employer sides
 
 - Database is borrowed from Glassdoor
+    Database is used for Job's description matching
