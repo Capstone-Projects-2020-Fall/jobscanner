@@ -1,7 +1,6 @@
 library(dplyr)
 library(ggplot2)
 library(tidyverse)
-library(tidyverse)
 source('helper.R')
 
 review = read.csv("employee_reviews.csv", stringsAsFactors = FALSE)
