@@ -21,7 +21,7 @@ For the rest of the panel, Job scanner will locate the user’s resume and analy
 #### Application model deployment and linking panel code: Kyle
 
 
-# Test major procedure and result
+# Web app address and how to run/test app
 (for pre-lease only)
 Video record of test demo: https://youtu.be/Dr1AF8cRAeQ
 
@@ -33,6 +33,7 @@ https://jobscanner.shinyapps.io/Scholar1/
 
 https://jobscanner.shinyapps.io/emp2/
 
+# Running app:
 
 First install Ananconda, then:
 ### 1. download the release and replace it with the Chromed Driver in the pre-release .zip files, every single one of it.
@@ -56,6 +57,29 @@ Go back to anaconda, see the pic below, search "selenium" (also “numpy” and 
 
 ![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/Picture4.png)
 ![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/Picture5.png)
+
+Then we open the Rstudio, locate every panel that hold the app, hit "open project" in this case:
+Application app: folder usrPanel
+Employer matching app: folder emp
+Salary prediction app: folder datamodel
+Company review app: folder app2
+Scholar salary analysis app: folder app3
+
+Once open the project, hit running the app:
+![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/1.png)
+
+After app is running, connect to the shinyapp.io account and bring it online:
+![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/2.png)
+
+For machine learning model using heroku, please follow the screenshots below:
+1. Link the GitHub Repo with the Heroku instances
+![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/3.png)
+2.Connect to GitHub
+![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/4.png)
+3.Choose the build pack, here we choose Python:
+![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/5.png)
+4. After deployment, find the website and that is our running app
+![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/6.png)
 
 ### 5.Test result screenshots (front-end that shows the final product)
 
@@ -89,7 +113,7 @@ Front-end(written in R):
 2. User can get preminary match scores by finding the similarity between their resume and job description
 2. User can alternate the numbers of job lists they want to show in the main screen(e.g. Someone will only want to show 10 matched job opening, then it will only show 10 by choosing the scroll down list "10" on the left hand side.
 3. User can update the job lists by searching with specific keywords appears in the job lists by type in the word in "seaching" on the rupper right.
-
+4. User can predict their future salary, check the company reviews, see if they get low balled job offer and check the average scholar salary if they want to work in academic institutions.
 
 Back-end(written in Python)
 
