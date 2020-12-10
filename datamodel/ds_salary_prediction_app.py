@@ -101,6 +101,11 @@ elif size == "51 to 200 employees":
     Size_51_to_200_employees = 1
 elif size == "Unknown":#9
     Size_Unknown = 1
+# st.write(Size_1,
+#   Size_1_to_50_employees, Size_10000_employees,
+#            Size_1001_to_5000_employees,Size_201_to_500_employees,
+#        Size_5001_to_10000_employees, Size_501_to_1000_employees,
+#        Size_51_to_200_employees, Size_Unknown)
 
 Sector_1,Sector_Accounting_Legal, Sector_Aerospace_Defence,Sector_Agriculture_Forestry,Sector_Arts_Entertainment_Recreation, Sector_Biotech_Pharmaceuticals, Sector_Business_Services,Sector_Consumer_Services, Sector_Education, Sector_Finance,Sector_Government, Sector_Healthcare,Sector_Information_Technology, Sector_Insurance,Sector_Manufacturing, Sector_Media, Sector_Non_Profits,Sector_Oil_Gas_Utilities, Sector_Real_Estate,Sector_Restaurants_Food_Service, Sector_Retail,Sector_Telecommunications, Sector_Transportation_Logistics,Sector_Travel_Tourism = 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 
