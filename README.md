@@ -59,10 +59,15 @@ Go back to anaconda, see the pic below, search "selenium" (also “numpy” and 
 ![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/Picture5.png)
 
 Then we open the Rstudio, locate every panel that hold the app, hit "open project" in this case:
-Application app: folder usrPanel
+
+Application app: folder userPanel
+
 Employer matching app: folder emp
+
 Salary prediction app: folder datamodel
+
 Company review app: folder app2
+
 Scholar salary analysis app: folder app3
 
 Once open the project, hit running the app:
@@ -72,12 +77,16 @@ After app is running, connect to the shinyapp.io account and bring it online:
 ![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/2.png)
 
 For machine learning model using heroku, please follow the screenshots below:
+
 1. Link the GitHub Repo with the Heroku instances
 ![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/3.png)
+
 2.Connect to GitHub
 ![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/4.png)
+
 3.Choose the build pack, here we choose Python:
 ![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/5.png)
+
 4. After deployment, find the website and that is our running app
 ![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/6.png)
 
@@ -94,14 +103,10 @@ For machine learning model using heroku, please follow the screenshots below:
 (pre-lease version)
 
 1. The application have dependency issue that currently works fine at local but cannot publish to the instances.
-![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/Picture11.png)
 2. Back-end matching code works fine with local dataset that scrapped from Glassdoor.com, but have crashing/glitch issue from time to time when using the same updated dataset from Amazon RDS.
 
 # Test Bugs and Issues
-### Front- end may not compatible with different computer due to the environment settings, even though all the dependencies are installed correctlyby the 14 pages test instruction document in master repository. 
-This is the feedback from our test group, currently we are working on solving the problem for good.
-![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/pic12.png)
-![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/pic13.png)
+ Front- end may not compatible with different computer due to the environment settings, even though all the dependencies are installed correctlyby the 14 pages test instruction document in master repository. 
 
 # Feature tested:
 
