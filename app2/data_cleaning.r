@@ -8,20 +8,20 @@ review = read.csv("employee_reviews.csv", stringsAsFactors = FALSE)
 review1 = separate(review, job.title, c('employee.status', 'position'), sep = '-')
 head(review1)
 
-# create boolean for if the response is from anonymous employee or not
+# this create boolean for if the response is from anonymous employee or not
 review2 = 
   review1 %>% 
     mutate(., position = trimws(position, which = c('both'))) %>% 
     mutate(is.anonymous = ifelse(position == "Anonymous Employee", TRUE, FALSE))
 
-# change the dates column to dates formate
+# this change the dates column to dates formate
 review3 = review2 %>% 
     mutate(., dates = trimws(dates, which = c('both'))) %>% 
     mutate(dates = as.Date(as.character(dates), '%b %d, %Y')) %>% 
     mutate(year = as.numeric(format(dates,'%Y'))) %>% 
     mutate(month = as.character(format(dates, '%b')))
 
-# write cleaned dataframe into csv file
+# this write cleaned dataframe into csv file
 write.csv(review3, file='review_data.csv', row.names=F)
 
 
