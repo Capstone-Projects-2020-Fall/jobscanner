@@ -64,6 +64,8 @@ Go back to anaconda, see the pic below, search "selenium" (also “numpy” and 
 ![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/Picture8.png)
 ![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/Picture9.png)
 ![alt text](https://github.com/Capstone-Projects-2020-Fall/jobscanner/blob/master/test%20picture/Picture10.png)
+
+
 # known Bugs
 (pre-lease version)
 
@@ -94,7 +96,4 @@ Back-end(written in Python)
 1. User can use selenium to web scrapping Glassdoor.com to get the job lists that they want to do the match later.
 2. User can alternate the job lists they want to scrap by changing the job name parameter and job number paramenter in the data collection back-end code.
 3. User can bypass the Glassdoor popout window and scrap the information without interrupting till finally the expected numbers of job lists finished collecting.
-
-# Test Manual:
-Please see the test manual in communication email/test manual in shared test drive folder/master repo
-
+4. User can test if they have been offered lower salary than normal market salary standard by checking the outputs of salary prediction panel app.
