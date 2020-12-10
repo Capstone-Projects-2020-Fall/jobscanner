@@ -41,6 +41,15 @@ shinyServer(
       })
     })
 
+    wc_data_con = reactive({
+      input$update
+      isolate({
+        withProgress({
+          setProgress(message = "Processing corpus...")
+          getTermMatrix_con(input$c_select)
+        })
+      })
+    })
 
     wc_data_advice = reactive({
       input$update
@@ -73,24 +82,24 @@ shinyServer(
                     main = "Title")
       title(main="Word Cloud - Column Pros")
     })
-    output$wcplot_pro = renderPlot({
-      v2 = wc_data_pro()
-      wordcloud_rep(names(v2), v2, rot.per = 0.3,
+    
+    output$wcplot_con = renderPlot({
+      v3 = wc_data_con()
+      wordcloud_rep(names(v3), v3, rot.per = 0.3,
                     min.freq = input$freq, max.words = input$max,
-                    colors = brewer.pal(8,"Dark2"),
-                    main = "Title")
-      title(main="Word Cloud - Column Pros")
+                    colors = brewer.pal(8,"Dark2"))
+      title(main="Word Cloud - Column Cons")
     })
-    output$wcplot_lite = render({
-      v2 = wc_data_pro()
-      wordcloud_rep(names(v2), v2, rot.per = 0.3,
+
+    output$wcplot_advice = renderPlot({
+      v4 = wc_data_advice()
+      wordcloud_rep(names(v4), v4, rot.per = 0.3,
                     min.freq = input$freq, max.words = input$max,
-                    colors = brewer.pal(8,"Dark2"),
-                    main = "Title")
-      title(main="Word Cloud - Column Pros")
+                    colors = brewer.pal(8,"Dark2"))
+      title(main="Word Cloud - Column Advice to Management")
     })
     
-
+# geo map us plot
     output$us_map <- renderGvis({
       data_map %>% filter(country_code == 'US', company %in% input$checkCompany1) %>% 
         group_by(state) %>% 
@@ -102,7 +111,7 @@ shinyServer(
                                 width="auto", height="auto"))
     })
     
-
+# geo map world
     output$world_map <- renderGvis({
       data_map %>% 
         filter(company %in% input$checkCompany1) %>% 
@@ -194,7 +203,7 @@ shinyServer(
  
     )
     
-   
+    # show statistics using infoBox
     output$Anonymous_Response_Ratio <- renderInfoBox({
       a_ratio = data %>% group_by(is.anonymous) %>% 
         summarise(n = n()) %>% 
